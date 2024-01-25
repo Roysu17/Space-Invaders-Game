@@ -4,7 +4,6 @@
     CCT 211
     Week 3 Lab 
     Prof. Michael Nixon
-    11111111111111111111111111111
 """
 import pygame
 import random
@@ -158,7 +157,8 @@ class Game:
     def draw(self):
         # Clear the screen
         self.screen.fill(pygame.color.THECOLORS['white'])
-
+        #Printing
+        print("Hi")
         # Draw all the spites
         self.all_sprites_list.draw(self.screen)
 
