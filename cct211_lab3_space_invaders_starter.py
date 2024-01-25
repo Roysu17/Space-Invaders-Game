@@ -157,8 +157,6 @@ class Game:
     def draw(self):
         # Clear the screen
         self.screen.fill(pygame.color.THECOLORS['white'])
-        #Printing
-        print("Hi")
         # Draw all the spites
         self.all_sprites_list.draw(self.screen)
 
