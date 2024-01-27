@@ -4,6 +4,7 @@
     CCT 211
     Week 3 Lab 
     Prof. Michael Nixon
+    Roy Su and Sean
 """
 import pygame
 import random
