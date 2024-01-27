@@ -150,9 +150,7 @@ class Game:
 
     def poll(self):
         for event in pygame.event.get():
-            if event.type == pygame.QUIT or self.score < 0:
-                if self.score < 0:
-                    print("You lose")
+            if event.type == pygame.QUIT:
                 self.running = False
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
@@ -166,7 +164,7 @@ class Game:
                 self.bullet_list.add(bullet)
             
             for enemy in self.block_list:
-                if random.random() < 0.003:
+                if random.random() < 0.00:
                     # Fire a bullet from the enemy
                     bullet = EnemyBullet()
                     # Set the bullet so it is where the player is
@@ -177,6 +175,9 @@ class Game:
                     self.enemy_bullet_list.add(bullet)
 
     def update(self):
+        if len(self.block_list) is 0:
+            print("You Win")
+            self.running = False
         # Call the update() method on all the sprites
         self.all_sprites_list.update()
 
@@ -222,7 +223,7 @@ class Game:
                 self.all_sprites_list.remove(block)
                 self.block_list.remove(block)
                 self.score -=1
-                print(self.score, "Block")
+                print(self.score)
                 if self.score < 0:
                     print("You lose")
                     self.running = False
