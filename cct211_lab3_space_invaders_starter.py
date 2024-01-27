@@ -131,8 +131,7 @@ class Game:
 
             # Set a random location for the block
             block.rect.x = random.randrange(1, self.screen_width-block.rect.width)
-            block.rect.y = random.randrange(
-                self.screen_height / 2)  # don't go all the way down
+            block.rect.y = random.randrange(self.screen_height//2)  # don't go all the way down
 
             # Add the block to the list of objects
             self.block_list.add(block)
@@ -164,7 +163,7 @@ class Game:
                 self.bullet_list.add(bullet)
             
             for enemy in self.block_list:
-                if random.random() < 0.00:
+                if random.random() < 0.003:
                     # Fire a bullet from the enemy
                     bullet = EnemyBullet()
                     # Set the bullet so it is where the player is
